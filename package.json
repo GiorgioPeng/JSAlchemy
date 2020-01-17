@@ -1,0 +1,26 @@
+{
+  "name": "jsalchemy",
+  "version": "1.0.0",
+  "description": "JS炼丹之旅",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GiorgioPeng/JSAlchemy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GiorgioPeng/JSAlchemy/issues"
+  },
+  "homepage": "https://github.com/GiorgioPeng/JSAlchemy#readme",
+  "dependencies": {
+    "@tensorflow/tfjs": "^1.5.1",
+    "@tensorflow/tfjs-vis": "^1.4.0"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
+}
