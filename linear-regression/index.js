@@ -29,7 +29,10 @@ window.onload = async () => {
   const labels = tf.tensor(ys); //给定的输出
   await model.fit(inputs, labels, {
     batchSize: 4, //每次模型要学的样本的数据量大小
-    epochs: 200, //迭代学习次数
+    epochs: 100, //迭代学习次数
     callbacks: tfvis.show.fitCallbacks({ name: "训练过程" }, ["loss"])
   });
+  const output = model.predict(tf.tensor([5, 6])); //输入一个tensor(结构和训练数据结构相同,想要预测多个时需要传入长度为n的数组),返回预测结果(数据类型为tensor)
+  output.print(); //损失没有降到0,所以结果不是9
+  console.log(output.dataSync()); //将tensor转化成普通数据数组
 };
