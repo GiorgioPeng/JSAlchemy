@@ -26,6 +26,7 @@ window.onload = async () => {
 
   //将数据转化成tensor
   const inputs = tf.tensor(xs); //输入
+  console.log(inputs);
   const labels = tf.tensor(ys); //给定的输出
   await model.fit(inputs, labels, {
     batchSize: 4, //每次模型要学的样本的数据量大小
