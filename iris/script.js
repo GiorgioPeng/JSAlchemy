@@ -47,6 +47,6 @@ window.onload = async () => {
         const pred = model.predict(input)
         console.log(pred.dataSync(0))
         alert(`预测结果：${IRIS_CLASSES[pred.argMax(1).dataSync(0)]}`)
-        //.argMax 方法可以输出某个维度的最大值的索引 0=> 第一维， 1=>第二维
+        //.argMax() 方法可以输出某个维度的最大值的索引 0=> 第一维， 1=>第二维
     }
 }

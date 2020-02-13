@@ -1,7 +1,6 @@
 import * as tfvis from '@tensorflow/tfjs-vis'
 import * as tfjs from '@tensorflow/tfjs'
 import { getData } from './data'
-import { relu } from '@tensorflow/tfjs';
 window.onload = async () => {
     const points = getData(400);
     tfvis.render.scatterplot(
