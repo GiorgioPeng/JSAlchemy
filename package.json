@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/GiorgioPeng/JSAlchemy#readme",
   "dependencies": {
+    "@tensorflow-models/speech-commands": "^0.4.2",
     "@tensorflow/tfjs": "^1.5.1",
     "@tensorflow/tfjs-vis": "^1.4.0"
   },
