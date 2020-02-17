@@ -1,7 +1,6 @@
 import * as tf from '@tensorflow/tfjs'
 import * as tfvis from '@tensorflow/tfjs-vis'
 import { MnistData } from './data'
-import { softmax, mod } from '@tensorflow/tfjs';
 
 window.onload = async () => {
     const data = new MnistData();
@@ -86,7 +85,7 @@ window.onload = async () => {
     })//验证集
     await model.fit(inputs,labels,{
         validationData:[Yinputs,Ylabels],
-        epochs:50,
+        epochs:80,
         callbacks:tfvis.show.fitCallbacks(
             {name:'损失'},
             ['loss','val_loss','acc','val_acc'],
@@ -114,13 +113,13 @@ window.onload = async () => {
     window.predict = () => {
         const input = tf.tidy(() => {
             return tf.image.resizeBilinear(//重新定义大小
-                tf.browser.fromPixels(canvas),
-                [28,28],
+                tf.browser.fromPixels(canvas),//将canvas转化成tensor
+                [28,28],//指定大小
                 true
             ).slice([0,0,0],[28,28,1])//使用slice将颜色从彩色变成黑白(切掉两层高度)
             .toFloat().div(255)//归一化
             .reshape([1,28,28,1])//一个图片
-        })//将canvas转化成tensor
+        })
         const pred = model.predict(input).argMax(1);
         alert(`预测结果为${pred.dataSync()[0]}`)
     }
